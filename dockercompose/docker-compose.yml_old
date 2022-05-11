@@ -1,0 +1,43 @@
+version: "2"
+services:
+    ### MySQL Container, this service is NOT being used
+    info-app-db:
+      image: mysql
+      environment:
+        MYSQL_ROOT_PASSWORD: baagu007
+        MYSQL_DATABASE: info
+        MYSQL_USER: root
+        MYSQL_PASSWORD: baagu007
+
+      volumes:
+        - infoDatabase:/var/lib/mysql
+      ports:
+        - "3306:3306"
+    #  restart: always
+
+    ### tomcat
+    info-app-api:
+      build: ./info-api
+      ports:
+        - "8082:8080"
+      depends_on:
+        - info-app-db
+
+    ### tomcat 2 for info client app
+    info-app-client:
+      build: ./info-client
+      ports:
+        - "8083:8080"
+      depends_on:
+        - info-app-api
+
+    ### redis public image
+    redis-docker-server:
+      image: "redis:alpine"
+      ports:
+        - "6379:6379"
+
+volumes:
+  infoDatabase:
+   external: true
+

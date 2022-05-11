@@ -1,0 +1,14 @@
+version: "2"
+services:
+    ### tomcat
+    info-app-api:
+      build: ./info-api
+      ports:
+        - "8082:8080"
+
+    ### redis public image
+    redis-docker-server:
+      image: "redis:alpine"
+      ports:
+        - "6379:6379"
+

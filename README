@@ -1,0 +1,6 @@
+Service application using web services 
+
+How to Run
+-----------
+mvn clean package 
+
