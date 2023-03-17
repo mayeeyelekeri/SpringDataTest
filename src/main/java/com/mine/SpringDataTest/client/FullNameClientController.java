@@ -12,6 +12,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -23,7 +24,7 @@ public class FullNameClientController {
 	//String url = "http://192.168.22.10:8000/api/names"; 
 	private Logger logger = LoggerFactory.getLogger(FullNameClientController.class);
 	
-	@RequestMapping("/clientnames")
+	@RequestMapping(value = "/clientnames", method = RequestMethod.GET)
 	public ModelAndView getAllNames2() {
 		RestTemplate restTemplate = new RestTemplate();
 		
