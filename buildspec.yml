@@ -8,11 +8,10 @@ env:
     DB_DATABASE: "db_creds:mysql_database"
     DB_ENDPOINT: "db_creds:mysql_endpoint"
 phases:
-  build:
+  pre_build:
     commands:
       - echo Build started on `date`
-      - mvn test
-  post_build:
+  build:
     commands:
       - echo Build completed on `date`
       - echo "Creating application-aws.properties file"
@@ -25,6 +24,9 @@ phases:
       - echo "spring.redis.host=redis>>$PROPERTIES_FILE"
       - echo "spring.redis.port=6379>>$PROPERTIES_FILE"
       - mvn clean package
+  post_build:
+    commands: 
+      - cat $PROPERTIES_FILE
       
 artifacts:
   files:
