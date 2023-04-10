@@ -1,7 +1,8 @@
 version: 0.1
 
 env: 
-  PROPERTIES_FILE: src/main/resources/application-aws.properties 
+  PROPERTIES_FILE: application-aws.properties 
+  DEST_PROPERTIES_FILE: src/main/resources/application-aws.properties 
   secrets-manager: 
     DB_USER: "db_creds:mysql_user"
     DB_PASSWORD: "db_creds:mysql_password"
@@ -26,7 +27,8 @@ phases:
       - mvn clean package
   post_build:
     commands: 
-      - cat $PROPERTIES_FILE
+      - cp $PROPERTIES_FILE $DEST_PROPERTIES_FILE
+      - cat $DEST_PROPERTIES_FILE
       
 artifacts:
   files:
