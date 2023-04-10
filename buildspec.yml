@@ -14,7 +14,9 @@ phases:
     commands:
       - echo Build started on `date`
       - echo "Creating application-aws.properties file"
-      - ./create_properties_file.sh $PROPERTIES_FILE $DEST_PROPERTIES_FILE $MYSQL_ENDPOINT $MYSQL_DATABASE $MYSQL_USER $MYSQL_PASSWORD
+      - aws s3 cp s3://$bucket/application-aws.properties $DEST_PROPERTIES_FILE
+      - cat $DEST_PROPERTIES_FILE
+      # - ./create_properties_file.sh $PROPERTIES_FILE $DEST_PROPERTIES_FILE $MYSQL_ENDPOINT $MYSQL_DATABASE $MYSQL_USER $MYSQL_PASSWORD
   build:
     commands:
       - echo Build completed on `date`
