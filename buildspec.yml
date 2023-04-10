@@ -1,5 +1,11 @@
 version: 0.1
 
+env: 
+  secrets-manager: 
+    DB_USER: "db_creds:mysql_user"
+    DB_PASSWORD: "db_creds:mysql_password"
+    DB_DATABASE: "db_creds:mysql_database"
+    DB_ENDPOINT: "db_creds:mysql_endpoint"
 phases:
   build:
     commands:
@@ -9,6 +15,7 @@ phases:
     commands:
       - echo Build completed on `date`
       - mvn clean package
+      - echo "db user is $DB_USER"
 artifacts:
   files:
     - target/SpringDataTest-0.0.1-SNAPSHOT.jar
