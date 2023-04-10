@@ -14,7 +14,9 @@ phases:
     commands:
       - echo Build started on `date`
       - echo "Creating application-aws.properties file"
-      - aws s3 cp s3://$BUCKET_NAME/application-aws.properties src/main/resources/application-aws.properties
+      - echo "bucket name is $BUCKET_NAME "
+      - echo bucket name is $BUCKET_NAME
+      - aws s3 cp s3://terraprojects5/application-aws.properties src/main/resources/application-aws.properties
       - ls -lrt src/main/resources/application-aws.properties
       - cat src/main/resources/application-aws.properties
       # - ./create_properties_file.sh $PROPERTIES_FILE $DEST_PROPERTIES_FILE $MYSQL_ENDPOINT $MYSQL_DATABASE $MYSQL_USER $MYSQL_PASSWORD
