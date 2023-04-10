@@ -9,6 +9,8 @@ mysql_password=$6
 
 echo "inside create_properties_file.sh" 
 echo "properties file $properties_file"
+echo "all properties $*" 
+echo "mysql_user = $mysql_user"
 echo "dest properties file $dest_properties_file"
 
 echo "spring.datasource.url=jdbc:mysql://$mysql_host/$mysql_database" >> $properties_file
