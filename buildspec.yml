@@ -14,6 +14,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo "Creating application-aws.properties file"
+      - echo "something " >> ${PROPERTIES_FILE}
       - echo "spring.datasource.url=jdbc:mysql://$DB_ENDPOINT/$DB_DATABASE" >> ${PROPERTIES_FILE}
       - echo "spring.datasource.username=$DB_USER" >> ${PROPERTIES_FILE}
       - echo "spring.datasource.password=$DB_PASSWORD" >> $PROPERTIES_FILE
