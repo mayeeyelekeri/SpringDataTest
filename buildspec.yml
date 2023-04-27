@@ -4,7 +4,6 @@ phases:
   pre_build:
     commands:
       - echo Build started on `date`
-      - echo "Creating application-aws.properties file"
       - echo "bucket name is $BUCKET_NAME "
   build:
     commands:
