@@ -1,6 +1,5 @@
 version: 0.1
 
-env: 
 phases:
   pre_build:
     commands:
