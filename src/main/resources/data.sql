@@ -12,3 +12,6 @@ insert into problem (problem, reasonForProblem, solution, technology) values ('a
 insert into problem (problem, reasonForProblem, solution, technology) values ('asdf', 'asdfsaaffsd', 'adfsadfsafds', 1);
 insert into problem (problem, reasonForProblem, solution, technology) values ('asdfs', 'asdfsaffsd', 'asdfsf', 2);
 insert into problem (problem, reasonForProblem, solution, technology) values ('asdf', 'asdfsaaffsd', '', 2);
+
+insert into info (id,description, subject, technology) values (1,'asdf', 'pulate H2 database', 2);
+insert into info (id,description, subject, technology) values (2,'add a file called data.sql at the same location as application.properties', 'how to populate H2 database', 2);
