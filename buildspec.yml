@@ -1,28 +1,15 @@
 version: 0.1
 
 env: 
-  variables: 
-    PROPERTIES_FILE: "application-aws.properties" 
-    DEST_PROPERTIES_FILE: "src/main/resources/application-aws.properties" 
-  secrets-manager: 
-    MYSQL_USER: "db_creds:mysql_user"
-    MYSQL_PASSWORD: "db_creds:mysql_password"
-    MYSQL_DATABASE: "db_creds:mysql_database"
-    MYSQL_ENDPOINT: "db_creds:mysql_endpoint"
 phases:
   pre_build:
     commands:
       - echo Build started on `date`
       - echo "Creating application-aws.properties file"
       - echo "bucket name is $BUCKET_NAME "
-      - echo bucket name is $BUCKET_NAME
-      - aws s3 cp s3://$BUCKET_NAME/application-aws.properties src/main/resources/application-aws.properties
-      - ls -lrt src/main/resources/application-aws.properties
-      - cat src/main/resources/application-aws.properties
-      # - ./create_properties_file.sh $PROPERTIES_FILE $DEST_PROPERTIES_FILE $MYSQL_ENDPOINT $MYSQL_DATABASE $MYSQL_USER $MYSQL_PASSWORD
   build:
     commands:
-      - echo Build completed on `date`
+      - echo Build started on `date`
       - mvn clean package
       - cp target/SpringDataTest-0.0.1-SNAPSHOT.jar codedeploy 
       - ls -lrt codedeploy
