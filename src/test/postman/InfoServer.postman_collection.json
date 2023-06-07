@@ -1,0 +1,84 @@
+{
+	"info": {
+		"_postman_id": "f06a2cad-8a05-4f2e-b2f2-af70692c46d4",
+		"name": "InfoServer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4036990"
+	},
+	"item": [
+		{
+			"name": "Technology",
+			"item": [
+				{
+					"name": "All Technology",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/techs",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"techs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Technology_2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/techs/2",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"techs",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "All Info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/infos",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"infos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Problems",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/problems",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"problems"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
