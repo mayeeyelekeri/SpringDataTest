@@ -9,9 +9,10 @@ env:
     MYSQL_PASSWORD: "db_creds:mysql_password"
     MYSQL_DATABASE: "db_creds:mysql_database"
     MYSQL_ENDPOINT: "db_creds:mysql_endpoint"
-    CODEARTIFACT_AUTH_TOKEN: "codeartifact:codeartifact_domain_token"
-    CODEARTIFACT_REPO: "codeartifact:codeartifact_artifact_repo_endpoint"
-    APPARTIFACT_REPO: "codeartifact:codeartifact_app_repo_endpoint"
+  parameter-store: 
+    CODEARTIFACT_AUTH_TOKEN: "codeartifact_domain_token"
+    CODEARTIFACT_REPO: "codeartifact_artifact_repo_endpoint"
+    APPARTIFACT_REPO: "codeartifact_app_repo_endpoint"
 
 phases:
   pre_build:
