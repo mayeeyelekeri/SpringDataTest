@@ -19,6 +19,8 @@ phases:
       - echo Build started on `date`
       - echo "bucket name is $BUCKET_NAME "
       - echo bucket name is $BUCKET_NAME
+      - echo app repo $APPARTIFACT_REPO
+      - echo artifact repo $CODEARTIFACT_REPO
       - aws s3 cp s3://$BUCKET_NAME/application-aws.properties src/main/resources/application-aws.properties
       - ls -lrt src/main/resources/application-aws.properties
       - cat src/main/resources/application-aws.properties
